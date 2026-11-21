@@ -1,0 +1,4 @@
+.build/
+*.idsig
+android/codice.jks
+node_modules/

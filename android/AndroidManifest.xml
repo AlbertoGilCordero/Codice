@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="app.codice.lector" android:versionCode="8" android:versionName="1.7">
+  <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="34"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <application android:label="Códice" android:icon="@mipmap/ic_launcher" android:theme="@style/App" android:hardwareAccelerated="true" android:allowBackup="true">
+    <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTask"
+      android:configChanges="orientation|screenSize|screenLayout|keyboardHidden|keyboard|smallestScreenSize|uiMode"
+      android:windowSoftInputMode="adjustResize">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+      <intent-filter android:label="Leer en Códice">
+        <action android:name="android.intent.action.VIEW"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <category android:name="android.intent.category.BROWSABLE"/>
+        <data android:scheme="content"/>
+        <data android:scheme="file"/>
+        <data android:mimeType="application/epub+zip"/>
+        <data android:mimeType="application/pdf"/>
+        <data android:mimeType="application/x-mobipocket-ebook"/>
+        <data android:mimeType="application/vnd.amazon.ebook"/>
+        <data android:mimeType="application/vnd.amazon.mobi8-ebook"/>
+        <data android:mimeType="application/x-fictionbook+xml"/>
+        <data android:mimeType="application/vnd.comicbook+zip"/>
+        <data android:mimeType="text/plain"/>
+      </intent-filter>
+    </activity>
+  </application>
+</manifest>
